@@ -14,7 +14,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #703B09;
+    background-color: #03A0EA;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: justify;
@@ -109,9 +109,9 @@ body {
     .NavigationItem__NavigationItem__23bcu a:hover,
     .NavigationItem__NavigationItem__23bcu a:active,
     .NavigationItem__NavigationItem__23bcu a.NavigationItem__active__2zJdO {
-        background-color: #8f5c2c;
+        
         color: rgba(0, 0, 0, 0.8);
-        border-bottom: 4px solid black;
+        /* border-bottom: 4px solid black; */
         font-weight: bolder;
     }
 }.DrawerToggle__DrawerToggle__26to0 {
@@ -194,8 +194,8 @@ body {
     -ms-flex-pack: justify;
         justify-content: space-between;
 }.Poster__Poster__1D0_Q {
-    width: 210mm;
-    min-height: 297mm;
+    width: 595px;
+    min-height: 842px;
     display: block;
     background-color: white;
     border: 1px solid #eeeeee;
@@ -204,37 +204,38 @@ body {
 }
 .Poster__Title__1rvEq {
     width: 90%;
-    margin: 120px auto 40px;
-    height: 50px;
+    margin: 15% auto 5%;
     text-align: center;
     color: #03A0EA;
 }
 .Poster__Title__1rvEq h1 {
-    font-size: 40px;
-    margin: -5px;
+    font-size: 30px;
+}
+.Poster__Title__1rvEq p {
+    font-size: 15px;
 }
 .Poster__Title__1rvEq hr {
-    width: 60%;
-    margin: 5px auto;
-    height:1px; 
-    border:none; 
-    border-top:1px solid #03A0EA;
+    width: 70%;
+    margin: 1% auto;
+    height: 1px; 
+    border: none; 
+    border-top: 1px solid #03A0EA;
 }
 .Poster__Qcode__3_No5 {
-    width: 400px;
-    height: 400px;
-    margin: 180px auto 0px;
+    width: 50%;
+    height: auto;
+    margin: 10% auto 0px;
     background-color: #03A0EA;
     position: relative;
     padding: 10px  
 }
 
 .Poster__QcodeLogo__2r1a3 {
-    width: 60px;
-    height: 60px;
+    width: 12%;
+    height: auto;
     position: absolute;
-    top: 190px;
-    left: 190px;
+    top: 46%;
+    left: 46%;
 }
 .Poster__QcodeLogo__2r1a3 img{
     width: 100%;
@@ -243,42 +244,53 @@ body {
 .Poster__BackgroundShape__2TsGr svg{
     /* margin-top: -250px; */
     position: absolute;
-    bottom: 0;
+    bottom: -10px;
     right: 0;
     z-index: -50;
 }
 .Poster__TennisBallUp__2MXSP {
     position: absolute;
     top: 0px;
-    left: -50px;
+    left: -5%;
 }
 
 .Poster__TennisBallDown__1zk0U {
     position: absolute;
-    bottom: 50px;
-    right: 0;
+    bottom: -1%;
+    right: -4%;
 }
 .Poster__Label__3sRvO {
     width: 100%;
     text-align: center;
     color: white;
     position: absolute;
-    bottom: 250px;   
+    bottom: 17%;   
 }
 .Poster__Label__3sRvO h1 {
     font-size: 40px;
 }
 .Poster__Label__3sRvO h3 {
-    font-size: 24px;
+    font-size: 25px;
 }
 .Poster__Logo__2oFog {
     width: 100%;
     position: absolute;
-    bottom: 80px;
+    bottom: 4%;
     text-align: center;
 }
 .Poster__Logo__2oFog img {
-    width: 200px;
+    width: 22%;
+}.PosterControl__PosterControl__1L8xM {
+    width: 300px;
+    height: 800px;
+    background-color: #eee;
+    padding: 16px;
+}
+
+.PosterControl__PosterControl__1L8xM button {
+    position: absolute;
+    bottom: 100px;
+    
 }.Button__Button__QI7b2 {
     background-color: #03A0EA;
     border: none;
@@ -307,10 +319,5 @@ body {
 
 .Button__Danger__2xnhN {
     color: #944317;
-}.PosterControl__PosterControl__1L8xM {
-    width: 300px;
-    height: 800px;
-    background-color: #eee;
-    padding: 16px;
 }
-/*# sourceMappingURL=main.312fbbbb.css.map*/
+/*# sourceMappingURL=main.1df07bc8.css.map*/
