@@ -49,9 +49,19 @@ body {
 
 .Toolbar__Title__2TGEa {
     color: white;
+    
+}
+.Toolbar__EventTitle__fJLBT {
+    color: white;
     font-size: 20px;
     line-height: 40px;
     margin-top: 10px;
+}
+.Toolbar__StationTitle__3P0-Y {
+    color: white;
+    font-size: 15;
+    line-height: 20px;
+    margin-top: 5px;
 }
 .Toolbar__EnCn__2N-c2 {
     width: 80px;
@@ -259,7 +269,7 @@ body {
 .DrawItem__DrawItem__EUhc9 {
     margin-top: 18px;
     width: 340px;
-    height: 130px;
+    height: 150px;
     background-color: #fff;
     border-radius: 9px;
     -webkit-box-shadow: 0px 0px 10px #BDBDBD;
@@ -309,7 +319,7 @@ body {
 
 .DrawItem__Container__35lVU {
     width: 100%;
-    height: 100px;
+    height: 120px;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: distribute;
@@ -359,29 +369,48 @@ body {
 
 .DrawItem__Teams__3xx1g {
     width: 160px;
-    height: 100px;
+    height: 110px;
     font-size: 12px;
     color: black;
     
 }
 .DrawItem__TeamA__3H32D {
-    margin-top: 30px;
+    margin-top: 25px;
+    height: 38px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center;
 }
 .DrawItem__TeamB__16XTE {
-    margin-top: 20px;
+    margin-top: 8px;
+    height: 38px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center;
 }
 .DrawItem__Result__3fr9t {
     width: 35px;
     height: 100px;
     font-weight: bolder;
     color: #FF9A00;
+    line-height: 38px;
 
 }
 .DrawItem__ResultA__3dwXd {
-    margin-top: 30px;
+    margin-top: 25px;
+    height: 38px;
+    
 }
 .DrawItem__ResultB__3li1E {
-    margin-top: 20px;
+    margin-top: 8px;
+    height: 38px;
+    
 }
 
 .DrawItem__Result__3fr9t img {
@@ -408,11 +437,11 @@ body {
 }
 .GameItem__Score__1FIj0 {
     width: 25px;
-    height: 30px;
+    height: 38px;
     color: white;
     margin: 1px auto 7px;
     text-align: center;
-    line-height: 30px;
+    line-height: 38px;
     position: relative;
 }
 .GameItem__TieBreak__1qWaJ {
@@ -437,15 +466,15 @@ body {
     
 }.DrawLine__DrawLine__3DQzY {
     width: 30px;
-    height: 152px;
-    margin-top: 82px;
+    height: 191px;
+    margin-top: 110px;
     margin-bottom: 145px;
 }
 
 .DrawLine__DrawLine2__1Qqxe {
     width: 30px;
-    height: 310px;
-    margin-top: 159px;
+    height: 386px;
+    margin-top: 200px;
     margin-bottom: 285px;
 }
 .DrawLine__Space__wzB9c {
@@ -609,4 +638,4 @@ body {
   display: none;
 }
 
-/*# sourceMappingURL=main.2907072e.css.map*/
+/*# sourceMappingURL=main.c8d40d16.css.map*/
