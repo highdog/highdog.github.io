@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href=".\css\style.css">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        var choosePerson = "#per1"
+        var posTop = '100px'
+        var posLeft = '100px'
+
+        $(document).ready(function () {
+            $("#center").click(function () {
+                $(choosePerson).animate({
+                    top: '10%',
+                    left: '40%',
+                    height: '500px',
+                    width: '500px'
+                },
+                    3000
+                );
+                $(choosePerson).animate({
+                    top: posTop,
+                    left: posLeft,
+                    height: '100px',
+                    width: '100px'
+                },
+                    3000
+                );
+            });
+
+        });
+
+        function getPerson(x) {
+
+            if (document.person.cPerson.value != "null") {
+                choosePerson = x
+            }
+        }
+        function getPosition(x) {
+
+            if (document.position.cPosition.value != "null") {
+                console.log(x)
+                switch (x) {
+                    case '1':
+                        posTop = '100px';
+                        posLeft = '100px';
+                        break;
+                    case '2':
+                        posTop = '250px';
+                        posLeft = '100px';
+                        break;
+                    case '3':
+                        posTop = '400px';
+                        posLeft = '100px';
+                        break;
+                    default:
+                        posTop = '100px';
+                        posLeft = '100px';
+                }
+                console.log(posTop)
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+
+
+    <div>
+        <img class="person" id="per1" src=".\img\p1.png" alt="">
+        <img class="person" id="per2" src=".\img\p2.png" alt="">
+        <img class="person" id="per3" src=".\img\p3.png" alt="">
+        <img class="person" id="per4" src=".\img\p4.png" alt="">
+        <img class="person" id="per5" src=".\img\p5.png" alt="">
+    </div>
+
+
+    <div>
+        <form name="person">
+            <select name="cPerson"
+                onChange="getPerson(document.person.cPerson.options[document.person.cPerson.options.selectedIndex].value)">
+                <option>选择球员</option>
+                <option value="#per1">person1 </option>
+                <option value="#per2">person2 </option>
+                <option value="#per3">person3 </option>
+                <option value="#per4">person4 </option>
+                <option value="#per5">person5 </option>
+            </select>
+        </form>
+        <form name="position">
+            <select name="cPosition"
+                onChange="getPosition(document.position.cPosition.options[document.position.cPosition.options.selectedIndex].value)">
+                <option>选择位置</option>
+                <option value=1>#1 </option>
+                <option value=2>#2 </option>
+                <option value=3>#3 </option>
+            </select>
+        </form>
+        <button id="center">sure</button>
+    </div>
+</body>
+
+</html>

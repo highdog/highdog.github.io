@@ -1,0 +1,8 @@
+.person {
+    background: #98bf21;
+    height: 10px;
+    width: 10px;
+    left: 50%;
+    bottom: 0px;
+    position: absolute;
+}
