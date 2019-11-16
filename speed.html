@@ -106,6 +106,7 @@
         var match_uuid = ""
         var host = "https://tennismarshal.sportsabc.com.cn/api/v1/matches/"
         var endpoint = "/ball_speed"
+        var lastBallspeed = 0
 
         function getUUID() {
             var uuid = prompt("Please enter UUID of the match：", "8f6ef2e5-e4b2-4a12-8f8a-53047703d51d");
@@ -120,7 +121,10 @@
             getBallSpeed()
         }
 
-
+        function speedDisappear() {
+            console.log('disappear')
+            document.getElementById("speedwrapper").style.display = 'none';
+        }
 
         function getBallSpeed() {
             //循环做某些事情
@@ -135,6 +139,14 @@
                     var obj = JSON.parse(json);
                     var ball_speed = obj.data.ball_speed
                     document.getElementById("speed").innerHTML = ball_speed;
+                    console.log(ball_speed)
+                    console.log(lastBallspeed)
+                    if (ball_speed != lastBallspeed) {
+                        document.getElementById("speedwrapper").style.display = 'block';
+                        lastBallspeed = ball_speed
+                        setTimeout(speedDisappear, 5000);
+                    }
+
                 }
             };
         }
