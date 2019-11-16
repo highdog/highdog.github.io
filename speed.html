@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <style type="text/css">
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #bg {
+            background-color: black;
+            width: 100%;
+            height: 100%;
+        }
+
+        #speedwrapper {
+            width: 100%;
+            padding-top: 20%;
+            text-align: center;
+            color: white;
+        }
+
+        #speed {
+            width: 60%;
+            float: left;
+            text-align: right;
+            font-size: 400px;
+
+        }
+
+        #unit {
+            font-size: 150px;
+            text-align: left;
+            line-height: 620px;
+        }
+
+        #hint {
+            position: absolute;
+            top: 50px;
+            left: 40%;
+            font-size: 20px;
+            color: #EA811F;
+        }
+
+        .btn {
+            width: 80px;
+            height: 50px;
+            background-color: black;
+            border: none;
+            font-size: 15px;
+            position: absolute;
+            top: 0px;
+        }
+
+        #btn-pause:hover {
+            background-color: #EA811F;
+        }
+
+        #btn-continue:hover {
+            background-color: #0093E8;
+        }
+
+        #btn-uuid:hover {
+            background-color: #A9F8B7 !important;
+        }
+
+        #btn-pause {
+            right: 0px;
+        }
+
+        #btn-continue {
+            right: 80px;
+        }
+
+        #btn-uuid {
+            right: 160px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="bg">
+        <div id="speedwrapper">
+            <div id="speed"></div>
+            <div id="unit">km/h</div>
+        </div>
+        <div id="hint"></div>
+        <button class="btn" id="btn-pause">pause</button>
+        <button class="btn" id="btn-continue">continue</button>
+        <button class="btn" id="btn-uuid">enter uuid</button>
+
+    </div>
+
+
+    <script language="JavaScript">
+        var match_uuid = ""
+        var host = "https://tennismarshal.sportsabc.com.cn/api/v1/matches/"
+        var endpoint = "/ball_speed"
+
+        function getUUID() {
+            var uuid = prompt("Please enter UUID of the match：", "8f6ef2e5-e4b2-4a12-8f8a-53047703d51d");
+            if (uuid == null || uuid == "") {
+                document.getElementById("hint").innerHTML = 'Please enter UUID of the match';
+                document.getElementById("btn-uuid").style.backgroundColor = '#A9F8B7';
+            } else {
+                match_uuid = uuid;
+                document.getElementById("hint").innerHTML = '';
+                document.getElementById("btn-uuid").style.backgroundColor = 'black';
+            }
+            getBallSpeed()
+        }
+
+
+
+        function getBallSpeed() {
+            //循环做某些事情
+            var url = host + match_uuid + endpoint
+            var httpRequest = new XMLHttpRequest();//第一步：建立所需的对象
+            httpRequest.open('GET', url, true);//第二步：打开连接  将请求参数写在url中  ps:"./Ptest.php?name=test&nameone=testone"
+            httpRequest.send();//第三步：发送请求  将请求参数写在URL中
+
+            httpRequest.onreadystatechange = function () {
+                if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+                    var json = httpRequest.responseText;//获取到json字符串，还需解析  
+                    var obj = JSON.parse(json);
+                    var ball_speed = obj.data.ball_speed
+                    document.getElementById("speed").innerHTML = ball_speed;
+                }
+            };
+        }
+
+        var interval = setInterval("getBallSpeed()", 1000);//每隔一秒执行一次getBallSpeed()
+
+        getUUID()
+
+        $("#btn-pause").click(function () {//点击暂停按钮      
+            if (interval) {
+                clearInterval(interval);
+                interval = null;
+            }
+            document.getElementById("hint").innerHTML = 'ballspeed has been paused';
+        });
+
+        $("#btn-continue").click(function () {//点击继续按钮 
+            if (interval) {
+                clearInterval(interval);
+                interval = null;
+            }
+            interval = setInterval("getBallSpeed()", 1000);
+            document.getElementById("hint").innerHTML = '';
+        });
+        $("#btn-uuid").click(function () {//点击继续按钮 
+            getUUID()
+        });
+
+
+    </script>
+</body>
+
+</html>
